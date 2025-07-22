@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+ /* Custom scrollbar for text areas */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #94a3b8; /* Slate gray thumb */
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* Darker slate gray on hover */
+        }
+        /* Ensure Inter font is used as per instructions */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for progress dots */
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e1; /* Inactive light gray */
+            transition: background-color 0.3s ease-in-out;
+        }
+        .progress-dot.active {
+            background-color: #2563eb; /* Active blue */
+        }
+        .progress-line {
+            height: 2px;
+            background-color: #cbd5e1; /* Inactive light gray */
+            flex-grow: 1;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .progress-line.active {
+            background-color: #2563eb; /* Active blue */
+        }

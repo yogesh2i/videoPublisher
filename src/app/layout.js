@@ -1,6 +1,11 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import Header from "./Components/Header/Header";
+import AuthProvider from "@/providers/AuthContext";
+import { VideoProvider } from "@/providers/VideoContext";
+config.autoAddCss = false
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +27,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AuthProvider>
+        <Header/>
+        <VideoProvider>
         {children}
+        </VideoProvider>
+        </AuthProvider>
       </body>
     </html>
   );
