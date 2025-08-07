@@ -11,7 +11,7 @@ export default function SignupButton() {
     // This function will be called when the user clicks the button
     const handleSignIn = async () => {
         setLoading(true);
-        await signIn("google", { redirect: true, callbackUrl: '/' });
+        await signIn("google", { redirect: true, callbackUrl: '/dashboard' });
         setLoading(false);
     }
     return (
